@@ -55,28 +55,24 @@ Ensure you have the following installed:
     python manage.py runserver
   ```
 
-📡 API Endpoints
+###📡 API Endpoints
 
 🔹 Admin Panel
 
 Access the Django admin panel at:
-
 http://127.0.0.1:8000/admin
 
 🔹 Retrieve FAQs
 
 Get FAQs in a specific language:
-
 GET /api/faqs/?lang=<language_code>
-
 Example Request (Default Language - English):
 
 GET http://127.0.0.1:8000/api/faqs
 
-🏃 Setting Up Redis for Caching
+###🏃 Setting Up Redis for Caching
 
 If using Redis separately, pull and run the Redis container:
-
 docker pull redis
 docker run --name redis-cache -d -p 6379:6379 redis
 
