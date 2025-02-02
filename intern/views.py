@@ -11,8 +11,8 @@ def get_faqs(request):
     data = []
     for faq in faqs:
         faq_data = {
-            'question': faq.get_translation(lang, 'question'),
-            'answer': faq.get_translation(lang, 'answer')
+            'question': intern.get_translation(lang, 'question'),
+            'answer': intern.get_translation(lang, 'answer')
         }
         data.append(faq_data)
 

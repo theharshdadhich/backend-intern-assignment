@@ -8,7 +8,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=False, cast=bool)
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='').split(',')
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+
 
 # Application definition
 INSTALLED_APPS = [
@@ -22,9 +23,10 @@ INSTALLED_APPS = [
     # Add-ons
     'ckeditor',
     'rest_framework',
+    'sslserver',
 
     # Custom apps
-    'faq',
+    'intern',
 ]
 
 MIDDLEWARE = [
@@ -37,7 +39,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'faq_project.urls'
+ROOT_URLCONF = 'bharatFD.urls'
 
 TEMPLATES = [
     {
@@ -55,7 +57,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'faq_project.wsgi.application'
+WSGI_APPLICATION = 'bharatFD.wsgi.application'
 
 # Database
 DATABASES = {
@@ -116,9 +118,9 @@ CACHES = {
 SECURE_HSTS_SECONDS = 31536000  # 1 year
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 SECURE_HSTS_PRELOAD = True
-SECURE_SSL_REDIRECT = config('SECURE_SSL_REDIRECT', default=True, cast=bool)
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
+SECURE_SSL_REDIRECT = False
+SESSION_COOKIE_SECURE = False
+CSRF_COOKIE_SECURE = False
 
 # Logging Configuration
 LOGGING = {
